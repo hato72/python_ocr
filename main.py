@@ -8,6 +8,7 @@ import os
 import pyocr
 import pyocr.builders
 from flask_cors import CORS
+from waitress import serve
 
 app = Flask(__name__)
 CORS(app)
@@ -43,5 +44,8 @@ def predict():
     response = {'ocr_result': result}
     return make_response(jsonify(response))
 
+# if __name__ == "__main__":
+#     app.run(host='127.0.0.1', port=5000, debug=True)
+
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    serve(app,host='127.0.0.1', port=5000)
