@@ -151,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     child: Center(
                       child: Text(
-                        'OCR Result: $_ocrResult',
+                        'Result: $_ocrResult',
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),
